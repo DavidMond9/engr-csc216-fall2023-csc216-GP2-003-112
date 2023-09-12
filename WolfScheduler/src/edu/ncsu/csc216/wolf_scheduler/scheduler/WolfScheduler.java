@@ -2,6 +2,8 @@ package edu.ncsu.csc216.wolf_scheduler.scheduler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import edu.ncsu.csc216.wolf_scheduler.course.Activity;
 import edu.ncsu.csc216.wolf_scheduler.course.Course;
 import edu.ncsu.csc216.wolf_scheduler.io.CourseRecordIO;
 /**
@@ -159,7 +161,7 @@ public class WolfScheduler {
 	 * @return true if course successfully removed, false if course does not exist in schedule.
 	 */
 	public boolean removeCourseFromSchedule(String name, String section) {
-		Course tempCourse = catalog.get(0);
+		Activity tempCourse = catalog.get(0);
 		for(int i = 0; i < schedule.size(); i++) {
 			//if course name and section exists in schedule, remove course and return true
 			if(schedule.get(i).getName().equals(name) && 
