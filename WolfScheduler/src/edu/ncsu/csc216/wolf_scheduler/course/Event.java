@@ -139,10 +139,7 @@ public class Event extends Activity {
 	@Override
 	public boolean isDuplicate(Activity activity) {
 		boolean isInstance = activity instanceof Event;
-		if(getTitle().equals(((Event) activity).getTitle()) && isInstance) {
-				return true;
-			}
-		return false;
+		return getTitle().equals(((Event) activity).getTitle()) && isInstance;	
 	}
 	
 

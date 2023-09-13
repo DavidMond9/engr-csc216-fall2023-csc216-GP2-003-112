@@ -129,11 +129,9 @@ public class WolfScheduler {
 						catalog.get(i).getSection().equals(section)) {
 					addedCourse = catalog.get(i);
 					for(int j = 0; j < schedule.size(); j++) {
-						if(schedule.get(j) instanceof Course) {
-							//if name of course already in schedule, throw exception
-							if(schedule.get(j).isDuplicate(addedCourse)) {
-								throw new IllegalArgumentException("You are already enrolled in " + name);
-							}	
+						if(schedule.get(j) instanceof Course && schedule.get(j).isDuplicate(addedCourse)) {
+							//if name of course already in schedule, throw exception 
+							throw new IllegalArgumentException("You are already enrolled in " + name);							
 						}
 					}
 				}

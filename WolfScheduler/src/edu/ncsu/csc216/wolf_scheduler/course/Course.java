@@ -418,11 +418,6 @@ public class Course extends Activity {
 	@Override
 	public boolean isDuplicate(Activity activity) {
 		boolean isInstance = activity instanceof Course;
-		if(name.equals(((Course) activity).getName())) {
-			if(isInstance) {
-				return true;
-			}
-		}
-		return false;
+		return name.equals(((Course) activity).getName()) && isInstance;
 	}
 }
