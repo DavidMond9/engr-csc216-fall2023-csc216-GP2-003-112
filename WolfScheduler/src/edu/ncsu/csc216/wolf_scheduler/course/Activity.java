@@ -1,6 +1,8 @@
 package edu.ncsu.csc216.wolf_scheduler.course;
 /**
- * a
+ * Activity class has 4 main fields of title, meeting days, start time and end time. It
+ * creates an activity that links to the event class. This class also has many methods,
+ * including getters, setters, and more.
  */
 public abstract class Activity {
 
@@ -234,7 +236,9 @@ public abstract class Activity {
 		// Return the string result
 		return res;
 	}
-
+	/** Returns the hash code of whatever is being called with this method.
+	 * @return int Returns the hash code as an integer.
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -245,7 +249,10 @@ public abstract class Activity {
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
-
+	/**
+	 * Checks to see if two objects are equal to each other
+	 * @return Returns true if they are equal, false if they are not equal.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

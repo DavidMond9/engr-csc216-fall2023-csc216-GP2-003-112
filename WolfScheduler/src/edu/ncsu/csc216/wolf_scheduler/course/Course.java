@@ -13,7 +13,7 @@ public class Course extends Activity {
 	private String name;
 	/** Course's section. */
 	private String section;
-	/** Course's credit hours */
+	/** Course's credit hours. */
 	private int credits;
 	/** Course's instructor */
 	private String instructorId;
@@ -285,7 +285,9 @@ public class Course extends Activity {
 		return name + "," + getTitle() + "," + section + "," + credits + "," + instructorId + "," + getMeetingDays() + ","
 				+ getStartTime() + "," + getEndTime();
 	}
-
+	/** Returns the hash code of whatever is being called with this method.
+	 * @return int Returns the hash code as an integer.
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -296,7 +298,10 @@ public class Course extends Activity {
 		result = prime * result + ((section == null) ? 0 : section.hashCode());
 		return result;
 	}
-	
+	/**
+	 * Checks to see if two objects are equal to each other
+	 * @return Returns true if they are equal, false if they are not equal.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -325,7 +330,10 @@ public class Course extends Activity {
 			return false;
 		return true;
 	}
-
+	/**
+	 * Gets the short display array of size 4.
+	 * @return 2D String array that has the short display.
+	 */
 	@Override
 	public String[] getShortDisplayArray() {
 		String[] arr = new String[4];
@@ -335,7 +343,10 @@ public class Course extends Activity {
 		arr[3] = getMeetingString();
 		return arr;
 	}
-
+	/**
+	 * Gets the long display array of size 7.
+	 * @return 2D String array that has the long display.
+	 */
 	@Override
 	public String[] getLongDisplayArray() {
 		String[] arr = new String[7];
