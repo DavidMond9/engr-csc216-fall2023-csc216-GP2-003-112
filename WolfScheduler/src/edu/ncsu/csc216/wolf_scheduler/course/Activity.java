@@ -106,6 +106,8 @@ public abstract class Activity {
 			int wCount = 0;
 			int hCount = 0;
 			int fCount = 0;
+			int sCount = 0;
+			int uCount = 0;
 			for (int i = 0; i < meetingDays.length(); i++) {
 				// Count each day
 				if (meetingDays.charAt(i) == 'M') {
@@ -118,14 +120,19 @@ public abstract class Activity {
 					hCount++;
 				} else if (meetingDays.charAt(i) == 'F') {
 					fCount++;
+				} else if (meetingDays.charAt(i) == 'S') {
+					sCount++;
+				} else if (meetingDays.charAt(i) == 'U') {
+					uCount++;
 				}
+				
 				// If not m, t, w, h, f, throw an exception
 				else {
 					throw new IllegalArgumentException("Invalid meeting days and times.");
 				}
 			}
 			// If a day shows up more than once, throw an exception
-			if (mCount > 1 || tCount > 1 || wCount > 1 || hCount > 1 || fCount > 1) { // checks for duplicates
+			if (mCount > 1 || tCount > 1 || wCount > 1 || hCount > 1 || fCount > 1 || sCount > 1 || uCount > 1) { // checks for duplicates
 				throw new IllegalArgumentException("Invalid meeting days and times.");
 			}
 			// Convert military time to standard time

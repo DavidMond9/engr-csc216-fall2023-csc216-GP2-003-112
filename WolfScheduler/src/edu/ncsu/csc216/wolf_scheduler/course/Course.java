@@ -359,4 +359,55 @@ public class Course extends Activity {
 		arr[6] = "";
 		return arr;
 	}
+	/** Sets the meeting days and time from the activity class
+	 * @param meetingDays represents the meeting days
+	 * @param startTime represents the start time
+	 * @param endTime represents the end time
+	 */
+	@Override
+	public void setMeetingDaysAndTime(String meetingDays, int startTime, int endTime) {
+		// Throw exception if the meetingDays is null or empty
+		if (meetingDays == null || "".equals(meetingDays)) {
+			throw new IllegalArgumentException("Invalid meeting days and times.");
+		}
+	
+		if ("A".equals(meetingDays)) { // Arranged
+			// Throw exception if the start or end time is not 0 after being arranged
+			if (startTime != 0 || endTime != 0) {
+				throw new IllegalArgumentException("Invalid meeting days and times.");
+			}
+			super.setMeetingDaysAndTime(meetingDays,  startTime, endTime);
+		}
+	
+		else { // not arranged
+			int mCount = 0;
+			int tCount = 0;
+			int wCount = 0;
+			int hCount = 0;
+			int fCount = 0;
+			for (int i = 0; i < meetingDays.length(); i++) {
+				// Count each day
+				if (meetingDays.charAt(i) == 'M') {
+					mCount++;
+				} else if (meetingDays.charAt(i) == 'T') {
+					tCount++;
+				} else if (meetingDays.charAt(i) == 'W') {
+					wCount++;
+				} else if (meetingDays.charAt(i) == 'H') {
+					hCount++;
+				} else if (meetingDays.charAt(i) == 'F') {
+					fCount++;
+				}
+				// If not m, t, w, h, f, throw an exception
+				else {
+					throw new IllegalArgumentException("Invalid meeting days and times.");
+				}
+			}
+			// If a day shows up more than once, throw an exception
+			if (mCount > 1 || tCount > 1 || wCount > 1 || hCount > 1 || fCount > 1) { // checks for duplicates
+				throw new IllegalArgumentException("Invalid meeting days and times.");
+			}	
+		super.setMeetingDaysAndTime(meetingDays, startTime, endTime);
+		}
+	}
 }
