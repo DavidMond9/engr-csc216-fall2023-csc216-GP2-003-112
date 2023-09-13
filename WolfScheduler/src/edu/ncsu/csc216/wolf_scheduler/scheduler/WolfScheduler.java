@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import edu.ncsu.csc216.wolf_scheduler.course.Activity;
 import edu.ncsu.csc216.wolf_scheduler.course.Course;
+import edu.ncsu.csc216.wolf_scheduler.io.ActivityRecordIO;
 import edu.ncsu.csc216.wolf_scheduler.io.CourseRecordIO;
 /**
  * Creating the WolfScheduler class, outline of the catalog and schedule. There are many methods
@@ -189,7 +190,7 @@ public class WolfScheduler {
 	public void exportSchedule(String filename) {
 		//try if filename exists with schedule
 		try {
-			CourseRecordIO.writeCourseRecords(filename, schedule);
+			ActivityRecordIO.writeCourseRecords(filename, schedule);
 		}
 		//if does not exist, throw exception
 		catch(IOException e){

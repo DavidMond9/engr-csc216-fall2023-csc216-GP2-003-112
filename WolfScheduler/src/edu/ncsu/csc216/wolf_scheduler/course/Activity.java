@@ -3,6 +3,8 @@ package edu.ncsu.csc216.wolf_scheduler.course;
  * Activity class has 4 main fields of title, meeting days, start time and end time. It
  * creates an activity that links to the event class. This class also has many methods,
  * including getters, setters, and more.
+ * 
+ * @author David Mond
  */
 public abstract class Activity {
 

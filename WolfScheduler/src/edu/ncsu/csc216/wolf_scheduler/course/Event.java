@@ -7,6 +7,7 @@ package edu.ncsu.csc216.wolf_scheduler.course;
  * Event class has many methods, and one field for the event details. It extends the class
  * Activity as well and has one super constructor which initializes the title, startTime,
  * endTime, and the eventDetails.
+ * @author David Mond
  */
 public class Event extends Activity {
 	/** Event details for activity. */
