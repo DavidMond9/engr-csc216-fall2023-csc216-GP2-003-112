@@ -410,4 +410,19 @@ public class Course extends Activity {
 		super.setMeetingDaysAndTime(meetingDays, startTime, endTime);
 		}
 	}
+	/**
+	 * Checks to see if the activity is already in the schedule.
+	 * @param activity Represents the activity that is being checked for duplicates.
+	 * @return boolean True if the activity exists already, false if not.
+	 */ 
+	@Override
+	public boolean isDuplicate(Activity activity) {
+		boolean isInstance = activity instanceof Course;
+		if(name.equals(((Course) activity).getName())) {
+			if(isInstance) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

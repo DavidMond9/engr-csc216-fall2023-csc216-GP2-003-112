@@ -298,6 +298,12 @@ public abstract class Activity {
 	 * @return 2d String array that gets the longer display.
 	 */
 	public abstract String[] getLongDisplayArray();
+	/**
+	 * Checks to see if the activity is a duplicate.
+	 * @param activity Type of activity.
+	 * @return True if it is a duplicate, false if not.
+	 */
+	public abstract boolean isDuplicate(Activity activity);
 	
 	
 
